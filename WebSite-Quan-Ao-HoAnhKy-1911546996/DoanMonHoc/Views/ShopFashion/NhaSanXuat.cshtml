@@ -1,0 +1,26 @@
+﻿@model IEnumerable<DoanMonHoc.Models.NhaSanXuat>
+
+
+
+    <h2>Nhà Sản Xuất</h2>
+    <div class="brands_products">
+        <div class="brands-name">
+            <ul class="nav nav-pills nav-stacked">
+
+                <li>
+
+                    @foreach (var item in Model)
+
+                    {
+                        <a href="@Url.Action("SPTheoNSX","ShopFashion", new {id = item.MaNSX})" class="brands-name"><span class="pull-right"></span></a>
+
+                        @item.TenNSX
+                    }
+
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+
+

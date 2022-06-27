@@ -1,0 +1,47 @@
+﻿@using DoanMonHoc.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "Giohang";
+    Layout = "~/Views/Shared/_LayoutShopFashion.cshtml";
+}
+
+<h2>Thông tin Giỏ Hàng</h2>
+<table>
+    <tr>
+        <td>Mã Sản Phẩm</td>
+        <td>Tên Sản Phẩm</td>
+        <td>Bìa Sản Phẩm</td>
+        <td>Số Lượng</td>
+        <td>Đơn Giá</td>
+        <td> Thành Tiền</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td> @item.iMaSP</td>
+            <td>@item.sTenSP</td>
+            <td><img src="~/images/product-details/@item" /></td>
+            <td>@item.iSoLuong</td>
+            <td>@String.Format("{0:0:0}", item.dDongia)</td>
+            <td>@String.Format("{0:0:0}", item.dThanhtien)</td>
+        </tr>
+    }
+
+    <tr>
+        <td> colspan="3"> Số Lượng Sách: @ViewBag.Tongluong</td>
+        <td>colspan="3"> Tổng tiền: @String.Format("{0:0:0}", ViewBag.TongTien) VND</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+

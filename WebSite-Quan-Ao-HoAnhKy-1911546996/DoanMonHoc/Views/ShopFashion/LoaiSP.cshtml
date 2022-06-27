@@ -1,0 +1,18 @@
+﻿@model IEnumerable<DoanMonHoc.Models.LoaiSP>
+<div class="left-sidebar">
+    <h2>Loại Sản Phẩm</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+
+            
+                @foreach (var item in Model)
+                {
+                    <a href="@Url.Action("SPTheoPhanLoai","ShopFashion", new {id = item.MaLoai})" class="panel-body"></a>
+
+                    @item.TenLoai
+                }
+
+            
+        </div>
+    </div>
+</div>

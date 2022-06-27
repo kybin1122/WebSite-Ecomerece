@@ -1,0 +1,33 @@
+﻿@model  IEnumerable <DoanMonHoc.Models.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutShopFashion.cshtml";
+}
+
+<h2>Trang Chủ</h2>
+<div class="row">
+    @foreach (var SanPham in Model)
+    {
+        <div class="col-sm-9 padding-right">
+            <div class="features_items">
+                <!--features_items-->
+                <h2 class="title text-center">Features Items</h2>
+                <div class="col-sm-4">
+                    <div class="product-image-wrapper">
+
+                        <li>
+                            <a href="@Url.Action("Details", "ShopFashion", new { id = SanPham.MaSP }) "></a>
+                            <img alt="@SanPham.TenSP" src="~/images/single-products/@SanPham.AnhBia" />
+                            <span>@SanPham.TenSP</span>
+
+
+
+                        </li>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>
